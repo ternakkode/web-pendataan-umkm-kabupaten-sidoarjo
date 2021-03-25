@@ -1,0 +1,1410 @@
+[
+    {
+        "nama": "Bakalan Wringinpitu",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Bakung Pringgodani",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Bakung Temenggungan",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Balongbendo",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Bogem Pinggir",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Gagang Kepuhsari",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Jabaran",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Jeruk Legi",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Kedung Sukodani",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Kemangsen",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Penambangan",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Seduri",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Seketi",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Singkalan",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Sumokembangsri",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Suwaluh",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Waruberon",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Watesari",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Wonokarang",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Wonokupang",
+        "id_kecamatan": 1
+    },
+    {
+        "nama": "Banjarsari",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Buduran",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Damarsi",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Dukuhtengah",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Entalsewu",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Pagerwojo",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Prasung",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Sawohan",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Sidokepung",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Sidokerto",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Sidomulyo",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Siwalan Panji",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Sukorejo",
+        "id_kecamatan": 2
+    },
+    {
+        "nama": "Wadungasih",
+        "id_kecamatan": 2
+    },
+    {
+        "id_kecamatan": 3,
+        "nama": "Balongdowo"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Balonggabus"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Bligo"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Candi"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Durungbanjar"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Durungbedug"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Gelam"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Jambangan"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Kalipecabean"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Karangtanjung"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Kebunsari"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Kedung Peluk"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Kedungkendo"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Kendalpecabean"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Klurak"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Larangan"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Ngampelsari"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Sepande"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Sidodadi"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Sugih Waras"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Sumokali"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Sumorame"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Tenggulunan"
+      },
+      {
+        "id_kecamatan": 3,
+        "nama": "Wedoro Klurak"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Bangah"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Ganting"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Gedangan"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Gemurung"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Karangbong"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Keboananom"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Keboansikep"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Ketajen"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Kragan"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Punggul"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Sawotratap"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Semambung"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Sruni"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Tebel"
+      },
+      {
+        "id_kecamatan": 4,
+        "nama": "Wedi"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Balongtani"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Besuki"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Dukuhsari"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Jemirahan"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Keboguyang"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Kedungcangkring"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Kedungpandan"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Kedungrejo"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Kupang"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Panggreh"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Pejarakan"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Permisan"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Semambung"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Tambak Kalisogo"
+      },
+      {
+        "id_kecamatan": 5,
+        "nama": "Trompoasri"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Balong Garut"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Cangkring"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Gading"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Jenggot"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Kandangan"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Kedungrawan"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Kedungsumur"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Keper"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Keret"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Krembung"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Lemujut"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Mojoruntut"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Ploso"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Rejeni"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Tambakrejo"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Tanjeg Wagir"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Wangkal"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Waung"
+      },
+      {
+        "id_kecamatan": 6,
+        "nama": "Wonomlati"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Barengkrajan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Gamping"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Jatikalang"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Jeruk Gamping"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Junwangi"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Katrungan Katerungan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Keboharan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Kemasan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Kraton"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Krian"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Ponokawan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Sedengan Mijen"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Sidomojo"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Sidomulyo"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Sidorejo"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Tambak Kemerakan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Tempel"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Terik"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Terung Kulon"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Terung Wetan"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Tropodo"
+      },
+      {
+        "id_kecamatan": 7,
+        "nama": "Watugolong"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Candipari"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Gedang"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Glagah Arum"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Jatirejo"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Juwet Kenongo"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Kebakalan"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Kebonagung"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Kedungboto"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Kedungsolo"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Kesambi"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Lajuk"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Mindi"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Pamotan"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Pesawahan"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Plumbon"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Porong"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Renokenongo"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Siring"
+      },
+      {
+        "id_kecamatan": 8,
+        "nama": "Wunut"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Bendotretek"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Bulang"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Cangkringturi"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Gampang"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Gedangrowo"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Jati Alun Alun"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Jatikalang"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Jedongcangkring"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Kajartengguli"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Kedungkembar"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Kedungsugo"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Kedungwonokerto"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Pejangkungan"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Prambon"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Simogirang"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Simpang"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Temu"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Watutulis"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Wirobiting"
+      },
+      {
+        "id_kecamatan": 9,
+        "nama": "Wono Plintahan"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Banjar Kemuning"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Betro"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Buncitan"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Cemandi"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Gisik Cemandi"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Kalanganyar"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Kwangsan"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Pabean"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Pepe"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Pranti"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Pulungan"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Sedati Agung"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Sedati Gede"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Segoro Tambak"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Semampir"
+      },
+      {
+        "id_kecamatan": 10,
+        "nama": "Tambak Cemandi"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Magersari"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Sidokumpul"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Lemahputro"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Pekauman"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Sidokare"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Celep"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Sekardangan"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Pucanganom"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Sidoklumpuk"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Pucang"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Lebo"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Suko"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Banjarbendo"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Jati"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Sumput"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Gebang"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Bluru Kidul"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Bulusidokare"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Cemeng Bakalan"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Cemeng Kalang"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Kemiri"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Rangkahkidul"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Sari Rogo"
+      },
+      {
+        "id_kecamatan": 11,
+        "nama": "Urangagung Jedong"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Panjunan"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Anggaswangi"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Bangsri"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Cangkringsari"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Jogosatru"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Jumputrejo"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Kebonagung"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Keloposepuluh"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Masangan Kulon"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Masangan Wetan"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Ngaresrejo"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Pademonegoro"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Pekarungan"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Plumbungan"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Sambungrejo"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Suko"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Sukodono"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Suruh"
+      },
+      {
+        "id_kecamatan": 12,
+        "nama": "Wilayut"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Krembangan"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Bebekan"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Bohar"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Bringinbendo"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Geluran"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Gilang"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Jemundo"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Kalijaten"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Kedungturi"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Ketegan"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Kletek"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Kramat Jegu"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Ngelom"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Pertapan Maduretno"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Sadang"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Sambi Bulu"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Sepanjang"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Sidodadi"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Taman"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Tanjungsari"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Tawangsari"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Trosobo"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Wage"
+      },
+      {
+        "id_kecamatan": 13,
+        "nama": "Wonocolo"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Banjar Asri"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Banjar Panji"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Boro"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Ganggang Panjang"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Gempol Sari"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kalidawir"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kalisampurno"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kalitengah"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kedensari"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kedung Banteng"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kedung Bendo"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Ketapang"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Ketegan"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Kludan"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Ngaban"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Penatarsewu"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Putat"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "andegan"
+      },
+      {
+        "id_kecamatan": 14,
+        "nama": "Sentul"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Balongmacekan"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Banjarwungu"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Gampingrowo"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Gempolklutuk"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Janti"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Kalimati"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Kedinding"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Kedungbocok"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Kemuning"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Kendalsewu"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Klantingsari"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Kramat Temenggung"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Mergobener"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Mergosari"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Mindugading"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Mliriprowo"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Sebani"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Segodobancang"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Singogalih"
+      },
+      {
+        "id_kecamatan": 15,
+        "nama": "Tarik"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Gelang"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Grabagan"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Grinting"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Grogol"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Janti"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Jiken"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kajeksan"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kebaron"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kedondong"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kemantren"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kenongo"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kepadangan"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kepatihan"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kepuh Kemiri"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Kepunten"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Medalem"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Modong"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Pangkemiri"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Singopadu"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Sudimoro"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Tlasih"
+      },
+      {
+        "id_kecamatan": 16,
+        "nama": "Tulangan"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Berbek"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Bungurasih"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Janti"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Kedungrejo"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Kepuh Kiriman"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Kureksari"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Medaeng"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Ngingas"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Pepelegi"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Tambak Oso"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Tambak Rejo"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Tambak Sawah"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Tambak Sumur"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Tropodo"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Wadungasri"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Waru"
+      },
+      {
+        "id_kecamatan": 17,
+        "nama": "Wedoro"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Becirongengor"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Candinegoro"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Jimbaran Kulon"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Jimbaran Wetan"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Karangpuri"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Ketimang"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Lambangan"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Mojorangagung"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Mulyodadi"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Pagerngumbuk"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Pilang"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Plaosan"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Ploso"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Popoh"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Sawocangkring"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Semambung"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Simo Angin Angin"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Simoketawang"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Sumberejo"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Tanggul"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Wonoayu"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Wonokalang"
+      },
+      {
+        "id_kecamatan": 18,
+        "nama": "Wonokasian"
+      }
+]

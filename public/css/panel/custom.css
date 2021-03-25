@@ -1,0 +1,16 @@
+.bg-umkm {
+    background-color: #408DBE;
+}
+
+.nav-link {
+    padding-bottom: 0px !important;
+}
+
+.sidebar-divider {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.collapse {
+    margin-top: 5px !important;
+}
