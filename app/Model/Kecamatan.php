@@ -6,24 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kecamatan extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
+
     protected $table = 'kecamatan';
-
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
     public $timestamps = false;
-
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array
-     */
     protected $guarded = [];
+
+    public function desa() {
+        return $this->hasMany('App\Model\Desa', 'id_kecamatan');
+    }
+
+    public function alamat() {
+        return $this->hasMany('App\Model\Alamat', 'id_alamat');
+    }
 }

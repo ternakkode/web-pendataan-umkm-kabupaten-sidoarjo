@@ -19,7 +19,7 @@ class CreateFotoProduk extends Migration
             $table->string('url', 100);
             $table->boolean('foto_utama');
 
-            $table->foreign('id_produk')->references('id')->on('produk');
+            $table->foreign('id_produk')->references('id')->on('produk')->onDelete('cascade');
         });
     }
 

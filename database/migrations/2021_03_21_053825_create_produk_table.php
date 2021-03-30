@@ -21,7 +21,7 @@ class CreateProdukTable extends Migration
             $table->longText('deskripsi');
             $table->timestamps();
 
-            $table->foreign('id_umkm')->references('id')->on('umkm');
+            $table->foreign('id_umkm')->references('id')->on('umkm')->onDelete('cascade');
         });
     }
 

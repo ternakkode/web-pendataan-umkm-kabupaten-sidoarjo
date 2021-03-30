@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+
+class IsProfileCompleted
+{
+    public function handle($request, Closure $next)
+    {
+        $isEmailVerified = (bool) session('is_email_verified');
+        $userId = session('logged_in_id');
+        if (!$isEmailVerified) return redirect('/verification?user_id='.$userId);
+        
+        $isProfileCompleted = (bool) session('is_profile_completed');
+        if (!$isProfileCompleted) return redirect('/app/profile/complete')->with('warning_message', 'Silahkan lengkapi profil anda terlebih dahulu'); // TODO: tambahkan flash message handler di view
+        
+        return $next($request);
+    }
+}

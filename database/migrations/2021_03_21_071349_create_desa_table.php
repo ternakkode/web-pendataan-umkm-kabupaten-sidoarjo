@@ -18,7 +18,7 @@ class CreateDesaTable extends Migration
             $table->unsignedBigInteger('id_kecamatan');
             $table->string('nama', 100);
 
-            $table->foreign('id_kecamatan')->references('id')->on('kecamatan');
+            $table->foreign('id_kecamatan')->references('id')->on('kecamatan')->onDelete('cascade');
         });
     }
 

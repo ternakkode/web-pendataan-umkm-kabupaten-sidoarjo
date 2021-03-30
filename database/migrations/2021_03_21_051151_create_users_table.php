@@ -19,8 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('username', 100)->unique();
             $table->string('password', 100);
             $table->string('nama', 100);
-            $table->string('no_hp', 20);
-            $table->boolean('telah_terverifikasi');
+            $table->bigInteger('nik')->nullable();
+            $table->string('no_hp', 20)->nullable();
+            $table->string('pendidikan_terakhir', 50)->nullable();
+            $table->string('foto_profil', 100)->nullable();
+            $table->boolean('telah_terverifikasi')->nullable();
             $table->timestamps();
         });
     }

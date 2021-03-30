@@ -21,7 +21,7 @@ class CreateUmkmTable extends Migration
             $table->unsignedBigInteger('id_lama_usaha');
             $table->unsignedBigInteger('id_jenis_usaha');
             $table->unsignedBigInteger('id_modal');
-            $table->integer('npwp');
+            $table->string('npwp', 20);
             $table->integer('tahun_pendataan');
             $table->boolean('telah_diterima');
             $table->date('diterima_pada')->nullable();

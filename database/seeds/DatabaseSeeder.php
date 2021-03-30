@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DaerahSeeder::class);
         $this->call(UMKMFormDataSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(UmkmSeeder::class);
     }
 }

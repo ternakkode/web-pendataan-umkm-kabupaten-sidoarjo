@@ -6,18 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Informasi extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'informasi';
 
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array
-     */
+    protected $table = 'informasi';
     protected $guarded = [];
 
     public function admin() {

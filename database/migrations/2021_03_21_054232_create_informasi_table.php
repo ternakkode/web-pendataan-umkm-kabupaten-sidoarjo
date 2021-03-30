@@ -23,7 +23,7 @@ class CreateInformasiTable extends Migration
             $table->date('terbit_pada')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_admin')->references('id')->on('admin');
+            $table->foreign('id_admin')->references('id')->on('admin')->onDelete('cascade');
         });
     }
 
