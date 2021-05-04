@@ -1,5 +1,5 @@
 @extends('layout.umkm-regis')
-@section('title', 'Langkah Pertama')
+@section('title', 'Pendaftaran UMKM Baru')
 @section('content')
 <form method="POST">
     @csrf
@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="navigation text-center">
-                <button type="submit" class="btn btn-success w-100">AJUKAN</button>
+                <button type="submit" class="btn btn-success w-100 font-weight-bold">AJUKAN</button>
             </div>
         </div>
     </div>

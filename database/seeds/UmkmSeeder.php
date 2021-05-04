@@ -1,6 +1,6 @@
 <?php
 
-use App\Modal\Umkm;
+use App\Model\Umkm;
 use App\Model\User;
 use Illuminate\Database\Seeder;
 
@@ -11,7 +11,7 @@ class UmkmSeeder extends Seeder
         $user = User::first();
 
         $umkm = new Umkm();
-        $umkm->id_user = $user->id; // TODO: ganti menjadi id dynamic sesuai yang login
+        $umkm->id_user = $user->id;
         $umkm->nib = 1234567890;
         $umkm->nama_usaha = 'Bakso Pa Nanang';
         $umkm->id_lama_usaha = 6;
@@ -20,6 +20,7 @@ class UmkmSeeder extends Seeder
         $umkm->npwp = '09.254.294.3-407.000';
         $umkm->tahun_pendataan = date("Y");
         $umkm->telah_diterima = true;
+        $umkm->diterima_pada = date("Y-m-d");
         $umkm->save();
 
         $umkm->alamat()->create([
@@ -28,6 +29,6 @@ class UmkmSeeder extends Seeder
             'detail' => 'DISINI SENANG DISANA SENANG DIMANA MANA HATIKU SENANG'
         ]);
         
-        $umkm->legalitas()->attach($input['legalitas']);
+        $umkm->legalitas()->attach([1, 2, 3, 4]);
     }
 }

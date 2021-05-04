@@ -1,4 +1,5 @@
 <?php
+
 Route::get('/app/login', 'AuthenticationController@appLogin');
 Route::get('/backoffice/login', 'AuthenticationController@backofficeLogin');
 Route::post('/login', 'AuthenticationController@processLogin');
@@ -7,20 +8,39 @@ Route::post('/logout', 'AuthenticationController@logout');
 Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user'], 'namespace' => 'App', 'name' => 'app.'], function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/complete', 'ProfileController@complete');
-        Route::get('/edit', 'ProfileController@edit');
-        Route::post('/', 'ProfileController@process');
+        Route::post('/complete', 'ProfileController@processComplete');
     });
-    Route::get('/', 'DashboardController@index');
 
-    Route::group(['prefix' => 'umkm', 'namespace' => 'Umkm', 'name' => 'umkm.'], function () {
-        Route::post('/authorize', 'AuthorizationController@authorize');
-        Route::get('/new', 'AuthorizationController@registration');
-        Route::post('/new', 'AuthorizationController@registration');
+    Route::middleware('is.profile.completed')->group(function () {
+        Route::get('/', 'DashboardController@index');
+
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('/edit', 'ProfileController@edit');
+            Route::post('/edit', 'ProfileController@processEdit');
+        });
+        
+        Route::group(['prefix' => 'umkm', 'namespace' => 'Umkm', 'name' => 'umkm.'], function () {
+            Route::get('/', 'DashboardController@index');
+            Route::get('/edit', 'DashboardController@editInformation');
+            Route::post('/edit', 'DashboardController@processEditInformation');
+            Route::post('/authorize', 'AuthorizationController@authorizeUmkm');
+            Route::get('/new', 'AuthorizationController@registration');
+            Route::post('/new', 'AuthorizationController@registrationProcess');
+        });
     });
 });
 
-Route::group(['prefix' => 'backoffice', 'middleware' => ['is.authenticated', 'is.admin'], 'namespace' => 'admin', 'name' => 'admin.'], function () {
-    Route::get('/', function () {
-        return view('page/backoffice/index');
-    });
+Route::group(['prefix' => 'backoffice', 'middleware' => ['is.authenticated', 'is.admin'], 'namespace' => 'Backoffice', 'name' => 'backoffice.'], function () {
+    Route::get('/', 'DashboardController@index');
+    Route::resource('admin', 'AdminController')->except('show');
+    Route::resource('desa', 'DesaController')->except('show');
+    Route::resource('informasi', 'InformasiController');
+    Route::resource('jenis-usaha', 'JenisUsahaController')->except('show');
+    Route::resource('kecamatan', 'KecamatanController')->except('show');
+    Route::resource('lama-usaha', 'LamaUsahaController')->except('show');
+    Route::resource('legalitas', 'LegalitasController')->except('show');
+    Route::resource('modal', 'ModalController')->except('show');
+    Route::resource('umkm', 'UmkmController');
+    Route::get('/umkm/{id}/approval', 'UmkmController@approval');
+    Route::resource('umkm.produk', 'ProdukController')->except('show');
 });

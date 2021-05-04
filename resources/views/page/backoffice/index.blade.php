@@ -1,12 +1,15 @@
 @extends('layout.admin')
 @section('title', 'Halaman Awal')
-@section('css')
-<style>
-    h1 {
-        color : red;
-    }
-</style>
-@endsection
 @section('content')
-<h1>Halo bro</h1>
+@endsection
+@section('js')
+@if (session('success_message'))
+<script type="text/javascript">
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: '{{ session('success_message') }}'
+    })
+</script>
+@endif
 @endsection

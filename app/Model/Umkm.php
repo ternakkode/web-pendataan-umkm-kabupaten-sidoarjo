@@ -10,6 +10,10 @@ class Umkm extends Model
     protected $table = 'umkm';
     protected $with = ['jenisUsaha', 'lamaUsaha', 'legalitas', 'modal', 'alamat'];
     protected $guarded = [];
+    
+    public function user() {
+        return $this->belongsTo('App\Model\User', 'id_user');
+    }
 
     public function jenisUsaha() {
         return $this->belongsTo('App\Model\JenisUsaha', 'id_jenis_usaha');

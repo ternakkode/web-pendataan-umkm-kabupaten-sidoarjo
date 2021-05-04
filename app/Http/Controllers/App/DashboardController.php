@@ -8,8 +8,8 @@ use App\Model\Umkm;
 class DashboardController extends Controller
 {
     public function index() {
-        dd(session()->all());
-        $payload['umkm'] = Umkm::where('id_user', 1)->get(); // TODO: ganti dengan user dinamis
+        $userId = session('logged_in_id');
+        $payload['umkm'] = Umkm::where('id_user', $userId)->get(); // TODO: ganti dengan user dinamis
         return view('page/user/index', $payload);
-    }   
+    }
 }

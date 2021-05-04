@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @yield('meta')
 
-    <title>@yield('title') | Admin Klinik UMKM Sidoarjo</title>
+    <title>@yield('title') | User Klinik UMKM Sidoarjo</title>
 
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -42,10 +42,19 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm"
+                    aria-expanded="true" aria-controls="collapseForm">
                     <i class="fas fa-fw fa-store"></i>
                     <span>UMKM</span>
                 </a>
+                <div id="collapseForm" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="login.html">Jenis Usaha</a>
+                        <a class="collapse-item" href="register.html">Lama Usaha</a>
+                        <a class="collapse-item" href="register.html">Legalitas</a>
+                        <a class="collapse-item" href="register.html">Modal</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">
@@ -176,7 +185,8 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/panel/sb-admin-2.min.js') }}"></script>
     @yield('js')

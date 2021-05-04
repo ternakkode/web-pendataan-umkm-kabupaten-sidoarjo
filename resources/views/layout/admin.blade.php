@@ -18,6 +18,7 @@
     <script src="https://kit.fontawesome.com/61ea652ee7.js" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template-->
+    <link href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="{{ asset('css/panel/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/panel/custom.css') }}" rel="stylesheet">
     @yield('css')
@@ -32,7 +33,7 @@
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ url('backoffice') }}">
                     <i class="fas fa-home"></i>
                     <span>Halaman Awal</span></a>
             </li>
@@ -42,21 +43,28 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUMKM"
+                    aria-expanded="true" aria-controls="collapseForm">
                     <i class="fas fa-fw fa-store"></i>
                     <span>UMKM</span>
                 </a>
+                <div id="collapseUMKM" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ url('backoffice/umkm') }}">Semua UMKM</a>
+                        <a class="collapse-item" href="{{ url('backoffice/umkm?status=pending') }}">UMKM Pending</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ url('backoffice/informasi') }}">
                     <i class="fas fa-fw fa-bullhorn"></i>
                     <span>Informasi</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ url('backoffice/admin') }}">
                     <i class="fas fa-fw fa-user-cog"></i>
                     <span>Pengurus</span>
                 </a>
@@ -76,10 +84,10 @@
                 </a>
                 <div id="collapseForm" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Jenis Usaha</a>
-                        <a class="collapse-item" href="register.html">Lama Usaha</a>
-                        <a class="collapse-item" href="register.html">Legalitas</a>
-                        <a class="collapse-item" href="register.html">Modal</a>
+                        <a class="collapse-item" href="{{ url('backoffice/jenis-usaha') }}">Jenis Usaha</a>
+                        <a class="collapse-item" href="{{ url('backoffice/lama-usaha') }}">Lama Usaha</a>
+                        <a class="collapse-item" href="{{ url('backoffice/legalitas') }}">Legalitas</a>
+                        <a class="collapse-item" href="{{ url('backoffice/modal') }}">Modal</a>
                     </div>
                 </div>
             </li>
@@ -93,8 +101,8 @@
                 <div id="collapseDaerah" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Kecamatan</a>
-                        <a class="collapse-item" href="register.html">Desa</a>
+                        <a class="collapse-item" href="{{ url('backoffice/kecamatan') }}">Kecamatan</a>
+                        <a class="collapse-item" href="{{ url('backoffice/desa') }}">Desa</a>
                     </div>
                 </div>
             </li>
@@ -151,15 +159,18 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batalkan</button>
+                    
+                    <form method="POST" action="{{ url('logout')}}" class="d-inline">
+                            @csrf
+                            <button class="btn btn-danger">Yakin</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -168,11 +179,16 @@
     @yield('modal')
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/panel/sb-admin-2.min.js') }}"></script>

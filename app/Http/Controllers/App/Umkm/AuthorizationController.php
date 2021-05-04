@@ -17,11 +17,11 @@ use Illuminate\Http\Request;
 
 class AuthorizationController extends Controller
 {
-    public function authorize(AuthorizeUmkm $request) {
+    public function authorizeUmkm(AuthorizeUmkm $request) {
         $input = $request->validated();
         $umkm = Umkm::find($input['id_umkm']);
-        if (!$umkm) // TODO: tambah error handler
-        if (!$umkm->id_user !== 1) // TODO: tambah error handler & change id to dynamic
+        // if (!$umkm) // TODO: tambah error handler
+        // if ($umkm->id_user !== 1) // TODO: tambah error handler & change id to dynamic
 
         session([
             'is_on_umkm' => true,
@@ -43,9 +43,10 @@ class AuthorizationController extends Controller
 
     public function registrationProcess(UmkmRegistration $request) {
         $input = $request->validated();
+        $userId = session('logged_in_id');
 
         $umkm = new Umkm();
-        $umkm->id_user = 1; // TODO: ganti menjadi id dynamic sesuai yang login
+        $umkm->id_user = $userId;
         $umkm->nib = $input['nib'];
         $umkm->nama_usaha = $input['nama_usaha'];
         $umkm->id_lama_usaha = $input['lama_usaha'];
@@ -64,6 +65,6 @@ class AuthorizationController extends Controller
         
         $umkm->legalitas()->attach($input['legalitas']);
 
-        return redirect('/app')->with('sucess_message', 'Selamat! Pengajuan UMKM anda telah berhasil. Silahkan tunggu data anda disetujui');
+        return redirect('/app')->with('success_message', 'Selamat! Pengajuan UMKM anda telah berhasil. Silahkan tunggu data anda disetujui');
     }
 }

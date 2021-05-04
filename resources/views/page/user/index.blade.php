@@ -3,13 +3,13 @@
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Data UKM Anda</h1>
-    <a href="{{ url('/umkm/new') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <a href="{{ url('app/umkm/new') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
         <i class="fas fa-plus fa-sm text-white-50"></i> Tambahkan UMKM Baru
     </a>
 </div>
-@if (session('sucess_message'))
+@if (session('success_message'))
 <div class="alert alert-success">
-    {{ session('sucess_message') }}
+    {{ session('success_message') }}
 </div>
 @endif
 <div class="row">

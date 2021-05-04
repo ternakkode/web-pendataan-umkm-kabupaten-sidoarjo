@@ -16,7 +16,7 @@ class CreateUmkmTable extends Migration
         Schema::create('umkm', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_user');
-            $table->integer('nib');
+            $table->BigInteger('nib');
             $table->string('nama_usaha', 100);
             $table->unsignedBigInteger('id_lama_usaha');
             $table->unsignedBigInteger('id_jenis_usaha');
