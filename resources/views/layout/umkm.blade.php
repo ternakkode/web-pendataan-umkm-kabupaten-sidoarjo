@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @yield('meta')
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>@yield('title') | Klinik UMKM Sidoarjo</title>
 
     <link
@@ -27,76 +29,19 @@
 <body id="page-top">
     <div id="wrapper">
         <ul class="navbar-nav bg-umkm sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('') }}">
                 <img src="{{ asset('img/logo.svg') }}" class="img-fluid" alt="">
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-home"></i>
-                    <span>Halaman Awal</span></a>
+                <a class="nav-link" href="{{ url('app/umkm/edit') }}">
+                    <i class="fas fa-building"></i>
+                    <span>Informasi Utama</span></a>
             </li>
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Fitur Utama
-            </div>
-
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-store"></i>
-                    <span>UMKM</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-bullhorn"></i>
-                    <span>Informasi</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-user-cog"></i>
-                    <span>Pengurus</span>
-                </a>
-            </li>
-
-            <hr class="sidebar-divider">
-
-            <div class="sidebar-heading">
-                Lain - Lain
-            </div>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm"
-                    aria-expanded="true" aria-controls="collapseForm">
-                    <i class="fas fa-fw fa-copy"></i>
-                    <span>Data Form</span>
-                </a>
-                <div id="collapseForm" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Jenis Usaha</a>
-                        <a class="collapse-item" href="register.html">Lama Usaha</a>
-                        <a class="collapse-item" href="register.html">Legalitas</a>
-                        <a class="collapse-item" href="register.html">Modal</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDaerah"
-                    aria-expanded="true" aria-controls="collapseDaerah">
-                    <i class="fas fa-fw fa-map-marker-alt"></i>
-                    <span>Daerah</span>
-                </a>
-                <div id="collapseDaerah" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Kecamatan</a>
-                        <a class="collapse-item" href="register.html">Desa</a>
-                    </div>
-                </div>
+                <a class="nav-link" href="{{ url('app/umkm/produk') }}">
+                    <i class="fas fa-cart-plus"></i>
+                    <span>Produk</span></a>
             </li>
 
             <hr class="sidebar-divider d-none d-md-block">
@@ -114,7 +59,7 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ url('app') }}">
                                 <i class="fas fa-arrow-left fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Kembali Ke Halaman User
                             </a>

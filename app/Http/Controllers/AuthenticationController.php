@@ -34,7 +34,7 @@ class AuthenticationController extends Controller {
         
         $this->addSession($role, $acess);
 
-        return redirect($redirection)->with('success_message', 'Anda berhasil login sebagai '. $role);  // TODO: add flash session handler di view
+        return redirect($redirection)->with('success_message', 'Anda berhasil login sebagai '. $role);
     }
 
     private function userLogin($username, $password) {
@@ -63,6 +63,8 @@ class AuthenticationController extends Controller {
 
         if ($role == 'user') {
             session([
+                'nama' => $payload->nama,
+                'foto_profil' => $payload->foto_profil,
                 'is_email_verified' => (bool) $payload->telah_terverifikasi,
                 'is_profile_completed' => ($payload->no_hp && $payload->pendidikan_terakhir && $payload->foto_profil) ? true : false
             ]);
@@ -71,6 +73,6 @@ class AuthenticationController extends Controller {
 
     public function logout() {
         session()->flush();
-        return redirect('/')->with('success_message', 'Berhasil keluar dari akun anda'); // TODO: add flash session handler di view
+        return redirect('/')->with('success_message', 'Berhasil keluar dari akun anda');
     }
 }

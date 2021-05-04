@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backoffice;
+namespace App\Http\Controllers\App\Umkm;
 
 use App\Http\Controllers\Controller;
 use App\Model\Produk;
@@ -13,29 +13,30 @@ use Illuminate\Support\Facades\Storage;
 class ProdukController extends Controller
 {
 
-    public function index($idUmkm)
+    public function index()
     {
-        $payload['umkm'] = Umkm::find($idUmkm);
+        $idUmkm = session('umkm_id');
         $payload['produk'] = Produk::where('id_umkm', $idUmkm)->get();
 
-        return view('page/backoffice/umkm/produk/index', $payload);
+        return view('page/umkm/produk/index', $payload);
     }
 
 
-    public function create($idUmkm)
+    public function create()
     {
+        $idUmkm = session('umkm_id');
         $payload['umkm'] = Umkm::find($idUmkm);
 
-        return view('page/backoffice/umkm/produk/create', $payload);
+        return view('page/umkm/produk/create', $payload);
     }
 
 
-    public function store(CreateProduk $request, $idUmkm)
+    public function store(CreateProduk $request)
     {
         $input = $request->validated();
 
         $produk = new Produk();
-        $produk->id_umkm = $idUmkm;
+        $produk->id_umkm = session('umkm_id');
         $produk->nama = $input['nama'];
         $produk->harga = $input['harga'];
         $produk->deskripsi = $input['deskripsi'];
@@ -57,21 +58,22 @@ class ProdukController extends Controller
 
         $produk->foto()->createMany($photos);
 
-        return redirect('backoffice/umkm/'.$idUmkm.'/produk')->with('success_message', 'Berhasil menambahkan data Produk UMKM');
+        return redirect('app/umkm/produk')->with('success_message', 'Berhasil menambahkan data Produk UMKM');
     }
 
 
-    public function edit($idUmkm, $idProduk)
+    public function edit($idProduk)
     {
         $payload['produk'] = Produk::find($idProduk);
-        if (!$payload['produk']) redirect('backoffice/umkm/'.$idUmkm.'/produk')->with('failed_message', 'Data Produk UMKM tidak ditemukan');
+        if (!$payload['produk']) redirect('app/umkm/produk')->with('failed_message', 'Data Produk UMKM tidak ditemukan');
         
         return view('page/backoffice/umkm/produk/edit', $payload);
     }
 
-    public function update(UpdateProduk $request, $idUmkm, $idProduk)
+    public function update(UpdateProduk $request, $idProduk)
     {
         $input = $request->validated();
+        $idUmkm = session('umkm_id');
 
         $produk = Produk::find($idProduk);
         $produk->nama = $input['nama'];
@@ -97,13 +99,13 @@ class ProdukController extends Controller
             $produk->foto()->createMany($photos);
         }
 
-        return redirect('backoffice/umkm/'.$idUmkm.'/produk')->with('success_message', 'Berhasil mengubah data Produk UMKM');
+        return redirect('app/umkm/produk')->with('success_message', 'Berhasil mengubah data Produk UMKM');
     }
 
     public function destroy($idUmkm, $idProduk)
     {
         $produk = Produk::find($idProduk);
-        if (!$produk) redirect('backoffice/umkm/'.$idUmkm.'/produk')->with('failed_message', 'Data Produk tidak ditemukan');
+        if (!$produk) redirect('app/umkm/produk')->with('failed_message', 'Data Produk tidak ditemukan');
 
         foreach($produk->foto as $foto) {
             Storage::delete(config('url.product'). '/' .$foto);
@@ -111,6 +113,6 @@ class ProdukController extends Controller
 
         $produk->delete();
         
-        return redirect('backoffice/umkm/'.$idUmkm.'/produk')->with('success_message', 'Berhasil menghapus data Produk UMKM');
+        return redirect('app/umkm/produk')->with('success_message', 'Berhasil menghapus data Produk UMKM');
     }
 }

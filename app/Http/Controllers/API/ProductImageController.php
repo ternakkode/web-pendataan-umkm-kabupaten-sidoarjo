@@ -13,7 +13,7 @@ class ProductImageController extends Controller
         
         $fileName = uniqid() . '_' . trim($image->getClientOriginalName());
         
-        $image->storeAs('images/product/tmp', $fileName);
+        $image->storeAs(config('url.tmp_product'), $fileName);
 
         return response()->json([
             'name' => $fileName,

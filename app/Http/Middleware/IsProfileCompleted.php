@@ -13,7 +13,7 @@ class IsProfileCompleted
         if (!$isEmailVerified) return redirect('/verification?user_id='.$userId);
         
         $isProfileCompleted = (bool) session('is_profile_completed');
-        if (!$isProfileCompleted) return redirect('/app/profile/complete')->with('warning_message', 'Silahkan lengkapi profil anda terlebih dahulu'); // TODO: tambahkan flash message handler di view
+        if (!$isProfileCompleted) return redirect('/app/profile/complete')->with('failed_message', 'Silahkan lengkapi profil anda terlebih dahulu');
         
         return $next($request);
     }

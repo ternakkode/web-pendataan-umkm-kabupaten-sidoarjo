@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index() {
         $userId = session('logged_in_id');
-        $payload['umkm'] = Umkm::where('id_user', $userId)->get(); // TODO: ganti dengan user dinamis
+        $payload['umkm'] = Umkm::where('id_user', $userId)->get();
         return view('page/user/index', $payload);
     }
 }

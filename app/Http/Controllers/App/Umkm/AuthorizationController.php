@@ -19,9 +19,10 @@ class AuthorizationController extends Controller
 {
     public function authorizeUmkm(AuthorizeUmkm $request) {
         $input = $request->validated();
+
         $umkm = Umkm::find($input['id_umkm']);
-        // if (!$umkm) // TODO: tambah error handler
-        // if ($umkm->id_user !== 1) // TODO: tambah error handler & change id to dynamic
+        if (!$umkm) return redirect('/app')->with('failed_message', 'UMKM tidak ditemukan!');
+        if ($umkm->id_user !== session('logged_in_id')) return redirect('/app')->with('failed_message', 'Anda tidak memili akses pada UMKM tersebut!');
 
         session([
             'is_on_umkm' => true,

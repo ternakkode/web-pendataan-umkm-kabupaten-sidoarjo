@@ -1,5 +1,7 @@
 <?php
 
+Route::get('/', 'BrandingController@index');
+
 Route::get('/app/login', 'AuthenticationController@appLogin');
 Route::get('/backoffice/login', 'AuthenticationController@backofficeLogin');
 Route::post('/login', 'AuthenticationController@processLogin');
@@ -15,8 +17,8 @@ Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user']
         Route::get('/', 'DashboardController@index');
 
         Route::group(['prefix' => 'profile'], function () {
-            Route::get('/edit', 'ProfileController@edit');
-            Route::post('/edit', 'ProfileController@processEdit');
+            Route::get('/', 'ProfileController@edit');
+            Route::put('/', 'ProfileController@processEdit');
         });
         
         Route::group(['prefix' => 'umkm', 'namespace' => 'Umkm', 'name' => 'umkm.'], function () {
@@ -26,6 +28,10 @@ Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user']
             Route::post('/authorize', 'AuthorizationController@authorizeUmkm');
             Route::get('/new', 'AuthorizationController@registration');
             Route::post('/new', 'AuthorizationController@registrationProcess');
+            Route::get('/pengajuan-ulang', 'DashboardController@pengajuanUlang');
+            Route::post('/pengajuan-ulang', 'DashboardController@processPengajuanUlang');
+            
+            Route::resource('produk', 'ProdukController')->except('show');
         });
     });
 });

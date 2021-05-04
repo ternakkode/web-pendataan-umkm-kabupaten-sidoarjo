@@ -6,7 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @yield('meta')
-    
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>@yield('title') | Klinik UMKM Sidoarjo</title>
 
     <!-- Bootstrap CSS -->
@@ -50,12 +52,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Tentang Kami</a>
                     </li>
+                    @if(session('is_logged_in'))
+                        @if(session('role') == 'user')
+                            <li class="nav-item">
+                                <a href="{{ url('app/')}}"class="btn btn-register">Akses Profil Anda</a>
+                            </li>
+                        @elseif(session('role') == 'admin')
+                            <li class="nav-item">
+                                <a href="{{ url('app/')}}"class="btn btn-register">Akses Panel Pengelola</a>
+                            </li>
+                        @endif
+                    @else
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-sm fa-user mr-1"></i> Masuk</a>
+                        <a class="nav-link" href="{{ url('app/login') }}"><i class="fas fa-sm fa-user mr-1"></i> Masuk</a>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-register">Daftar Sekarang</button>
+                        <a href="{{ url('app/register')}}"class="btn btn-register">Daftar Sekarang</a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </nav>
