@@ -4,12 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditProfile extends FormRequest
+class UpdateUser extends FormRequest
 {
     public function rules()
     {
         return [
             'nama' => 'bail|required|max:100',
+            'email' => 'bail|required|email', // TODO : kasi unique value checking
             'nik' => 'bail|required|numeric',
             'no_hp' => 'bail|required|numeric',
             'password' => 'bail|nullable',

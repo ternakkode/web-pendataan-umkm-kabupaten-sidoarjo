@@ -38,7 +38,7 @@ class DashboardController extends Controller
         $umkm = Umkm::find(session('umkm_id'));
         $umkm->nib = $input['nib'];
         $umkm->nama_usaha = $input['nama_usaha'];
-        $ukmkm->id_lama_usaha = $input['lama_usaha'];
+        $umkm->id_lama_usaha = $input['lama_usaha'];
         $umkm->id_jenis_usaha = $input['jenis_usaha'];
         $umkm->id_modal = $input['modal'];
         $umkm->npwp = $input['npwp'];

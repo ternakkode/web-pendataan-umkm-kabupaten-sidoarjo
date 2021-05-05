@@ -108,7 +108,7 @@ class UmkmController extends Controller
         $umkm->nib = $input['nib'];
         $umkm->nama_usaha = $input['nama_usaha'];
         $umkm->id_user = $input['user'];
-        $ukmkm->id_lama_usaha = $input['lama_usaha'];
+        $umkm->id_lama_usaha = $input['lama_usaha'];
         $umkm->id_jenis_usaha = $input['jenis_usaha'];
         $umkm->id_modal = $input['modal'];
         $umkm->npwp = $input['npwp'];

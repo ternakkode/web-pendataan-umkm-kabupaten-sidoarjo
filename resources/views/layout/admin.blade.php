@@ -45,6 +45,13 @@
             </div>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{ url('backoffice/user') }}">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>User</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUMKM"
                     aria-expanded="true" aria-controls="collapseForm">
                     <i class="fas fa-fw fa-store"></i>

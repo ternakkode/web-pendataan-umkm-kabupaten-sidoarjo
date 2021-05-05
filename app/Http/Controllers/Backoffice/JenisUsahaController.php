@@ -31,7 +31,7 @@ class JenisUsahaController extends Controller
         
         $jenisUsaha = new JenisUsaha();
         $jenisUsaha->nama = $input['nama'];
-        $admin->save();
+        $jenisUsaha->save();
 
         return redirect('backoffice/jenis-usaha')->with('success_message', 'Berhasil menambahkan Jenis Usaha baru');
     }

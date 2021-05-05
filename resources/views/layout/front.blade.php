@@ -59,7 +59,7 @@
                             </li>
                         @elseif(session('role') == 'admin')
                             <li class="nav-item">
-                                <a href="{{ url('app/')}}"class="btn btn-register">Akses Panel Pengelola</a>
+                                <a href="{{ url('backoffice/')}}"class="btn btn-register">Akses Panel Pengelola</a>
                             </li>
                         @endif
                     @else

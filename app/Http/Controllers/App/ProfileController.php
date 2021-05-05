@@ -49,7 +49,7 @@ class ProfileController extends Controller
         $user->password = isset($input['password']) ? Hash::make($input['password']) : $user->password; 
         $user->foto_profil = isset($fileName) ? $fileName : $user->foto_profil;
         $user->save();
-        $user->alamat()->create([
+        $user->alamat()->update([
             'id_kecamatan' => $input['kecamatan'],
             'id_desa' => $input['desa'],
             'detail' => $input['detail_alamat']
@@ -78,6 +78,7 @@ class ProfileController extends Controller
             'detail' => $input['detail_alamat']
         ]);
 
+        session(['is_profile_completed' => true]);
         return redirect('/app')->with('success_message', 'Profil anda telah lengkap, anda bisa mulai menambahkan UMKM anda');
     }
 }

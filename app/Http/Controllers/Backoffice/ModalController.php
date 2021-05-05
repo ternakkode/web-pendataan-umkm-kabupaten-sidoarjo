@@ -31,7 +31,7 @@ class ModalController extends Controller
         
         $modal = new Modal();
         $modal->nama = $input['nama'];
-        $admin->save();
+        $modal->save();
 
         return redirect('backoffice/modal')->with('success_message', 'Berhasil menambahkan Modal baru');
     }

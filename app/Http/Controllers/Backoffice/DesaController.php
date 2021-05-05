@@ -34,7 +34,7 @@ class DesaController extends Controller
         $desa = new Desa();
         $desa->nama = $input['nama'];
         $desa->id_kecamatan = $input['id_kecamatan'];
-        $admin->save();
+        $desa->save();
 
         return redirect('backoffice/desa')->with('success_message', 'Berhasil menambahkan Desa baru');
     }

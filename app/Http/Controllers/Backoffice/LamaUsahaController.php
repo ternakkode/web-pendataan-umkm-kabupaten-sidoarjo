@@ -31,7 +31,7 @@ class LamaUsahaController extends Controller
         
         $lamaUsaha = new LamaUsaha();
         $lamaUsaha->nama = $input['nama'];
-        $admin->save();
+        $lamaUsaha->save();
 
         return redirect('backoffice/lama-usaha')->with('success_message', 'Berhasil menambahkan Lama Usaha baru');
     }

@@ -31,7 +31,7 @@ class LegalitasController extends Controller
         
         $legalitas = new Legalitas();
         $legalitas->nama = $input['nama'];
-        $admin->save();
+        $legalitas->save();
 
         return redirect('backoffice/legalitas')->with('success_message', 'Berhasil menambahkan Legalitas baru');
     }

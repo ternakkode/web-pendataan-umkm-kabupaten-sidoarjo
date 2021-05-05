@@ -47,6 +47,7 @@ Route::group(['prefix' => 'backoffice', 'middleware' => ['is.authenticated', 'is
     Route::resource('legalitas', 'LegalitasController')->except('show');
     Route::resource('modal', 'ModalController')->except('show');
     Route::resource('umkm', 'UmkmController');
+    Route::resource('user', 'UserController');
     Route::get('/umkm/{id}/approval', 'UmkmController@approval');
     Route::resource('umkm.produk', 'ProdukController')->except('show');
 });

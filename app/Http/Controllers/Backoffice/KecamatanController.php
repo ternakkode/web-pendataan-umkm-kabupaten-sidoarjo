@@ -31,7 +31,7 @@ class KecamatanController extends Controller
         
         $kecamatan = new Kecamatan();
         $kecamatan->nama = $input['nama'];
-        $admin->save();
+        $kecamatan->save();
 
         return redirect('backoffice/kecamatan')->with('success_message', 'Berhasil menambahkan Kecamatan baru');
     }
