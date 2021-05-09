@@ -3,6 +3,10 @@
 Route::get('/', 'BrandingController@index');
 
 Route::get('/app/login', 'AuthenticationController@appLogin');
+Route::get('/app/register', 'AuthenticationController@appRegister');
+Route::post('/app/register', 'AuthenticationController@processRegister');
+Route::get('/app/verification', 'AuthenticationController@reminderVerificationEmail');
+Route::get('/app/verification/process', 'AuthenticationController@processVerification');
 Route::get('/backoffice/login', 'AuthenticationController@backofficeLogin');
 Route::post('/login', 'AuthenticationController@processLogin');
 Route::post('/logout', 'AuthenticationController@logout');
@@ -23,6 +27,7 @@ Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user']
         
         Route::group(['prefix' => 'umkm', 'namespace' => 'Umkm', 'name' => 'umkm.'], function () {
             Route::get('/', 'DashboardController@index');
+            Route::get('/cetak', 'DashboardController@cetak');
             Route::get('/edit', 'DashboardController@editInformation');
             Route::post('/edit', 'DashboardController@processEditInformation');
             Route::post('/authorize', 'AuthorizationController@authorizeUmkm');
@@ -37,6 +42,8 @@ Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user']
 });
 
 Route::group(['prefix' => 'backoffice', 'middleware' => ['is.authenticated', 'is.admin'], 'namespace' => 'Backoffice', 'name' => 'backoffice.'], function () {
+    Route::get('/export/umkm', 'UmkmController@exportAll');
+    
     Route::get('/', 'DashboardController@index');
     Route::resource('admin', 'AdminController')->except('show');
     Route::resource('desa', 'DesaController')->except('show');
@@ -49,5 +56,6 @@ Route::group(['prefix' => 'backoffice', 'middleware' => ['is.authenticated', 'is
     Route::resource('umkm', 'UmkmController');
     Route::resource('user', 'UserController');
     Route::get('/umkm/{id}/approval', 'UmkmController@approval');
+    Route::get('/umkm/{id}/cetak', 'UmkmController@cetak');
     Route::resource('umkm.produk', 'ProdukController')->except('show');
 });

@@ -34,9 +34,14 @@
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('app/umkm/edit') }}">
+                <a class="nav-link" href="{{ url('app/umkm/') }}">
                     <i class="fas fa-building"></i>
-                    <span>Informasi Utama</span></a>
+                    <span>Data Informasi Utama</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app/umkm/edit') }}">
+                    <i class="fas fa-edit"></i>
+                    <span>Ubah Informasi Utama</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('app/umkm/produk') }}">

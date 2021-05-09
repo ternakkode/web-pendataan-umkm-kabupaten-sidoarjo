@@ -117,6 +117,26 @@ a:hover {
   }
 }
 
+@media (min-width: 320px) {
+  .transparent-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+  .transparent-header .logo-header {
+    max-width: 150px;
+  }
+}
+@media (min-width: 768px) {
+  .transparent-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+  .transparent-header .logo-header {
+    max-width: 200px;
+  }
+}
 .footer {
   color: #FFFFFF;
 }
@@ -165,6 +185,38 @@ a:hover {
   color: #000000;
   text-align: center;
   padding: 25px 50px;
+}
+
+.auth-page .title {
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+.auth-page .under-title {
+  color: #408DBE;
+}
+.auth-page .input-group {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.auth-page .input-icon {
+  color: #408DBE;
+}
+.auth-page .form-control {
+  padding: 25px;
+}
+.auth-page .input-group-text {
+  background-color: transparent;
+}
+.auth-page .img-verification {
+  max-width: 400px;
+}
+.auth-page .title-daerah {
+  color: #F6B845;
+}
+@media (min-width: 768px) {
+  .auth-page .detail-verification-wrapper {
+    padding: 20px 180px;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

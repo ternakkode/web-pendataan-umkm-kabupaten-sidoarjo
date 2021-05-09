@@ -3,7 +3,9 @@
 
 // layout
 @import 
-    'layout/header', 
+    'layout/header',
     'layout/footer';
 
 // pages
+@import 
+    'pages/auth';

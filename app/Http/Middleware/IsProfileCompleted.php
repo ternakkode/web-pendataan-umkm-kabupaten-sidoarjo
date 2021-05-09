@@ -10,7 +10,7 @@ class IsProfileCompleted
     {
         $isEmailVerified = (bool) session('is_email_verified');
         $userId = session('logged_in_id');
-        if (!$isEmailVerified) return redirect('/verification?user_id='.$userId);
+        if (!$isEmailVerified) return redirect('/app/verification');
         
         $isProfileCompleted = (bool) session('is_profile_completed');
         if (!$isProfileCompleted) return redirect('/app/profile/complete')->with('failed_message', 'Silahkan lengkapi profil anda terlebih dahulu');

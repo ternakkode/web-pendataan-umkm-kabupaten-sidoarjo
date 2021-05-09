@@ -1,0 +1,1 @@
+Terimakasih telah mengajukan UMKM anda pada Klinik UMKM Sidoarjo, Setelah kami pertimbangkan kami memutuskan untuk menerima UMKM anda dengan nama <b>{{ $umkm->nama_usaha }}</b>, anda bisa mulai menambahkan produk anda pada laman <a href="{{ url('app/user') }}">Panel User Klinik UMKM Sidoarjo</a>

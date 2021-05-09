@@ -55,6 +55,7 @@ class ProfileController extends Controller
             'detail' => $input['detail_alamat']
         ]);
 
+        session(['foto_profil' => $user->foto_profil]);
         return redirect('/app')->with('success_message', 'Profil anda berhasil diubah');
     }
     
@@ -78,7 +79,7 @@ class ProfileController extends Controller
             'detail' => $input['detail_alamat']
         ]);
 
-        session(['is_profile_completed' => true]);
+        session(['is_profile_completed' => true, 'foto_profil' => $user->foto_profil]);
         return redirect('/app')->with('success_message', 'Profil anda telah lengkap, anda bisa mulai menambahkan UMKM anda');
     }
 }

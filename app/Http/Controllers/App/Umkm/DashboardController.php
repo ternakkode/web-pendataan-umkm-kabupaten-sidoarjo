@@ -17,7 +17,18 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index() {
-        return view('page/umkm/dashboard');
+        $umkmId = session('umkm_id');
+        $payload['umkm'] = Umkm::find($umkmId);
+
+        return view('page/umkm/dashboard', $payload);
+    }
+
+    public function cetak() {
+        $umkmId = session('umkm_id');
+        $payload['umkm'] = Umkm::find($umkmId);
+        if (!$payload['umkm']) redirect('backoffice/umkm')->with('failed_message', 'Data UMKM tidak ditemukan');
+
+        return view('pdf/data-umkm', $payload);;
     }
 
     public function editInformation() {

@@ -121,3 +121,27 @@
         }
     }
 }
+
+@media (min-width: 320px) {
+    .transparent-header {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+
+        .logo-header {
+            max-width: 150px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .transparent-header {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+
+        .logo-header {
+            max-width: 200px;
+        }
+    }
+}

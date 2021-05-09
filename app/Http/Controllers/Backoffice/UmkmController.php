@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Backoffice;
 
+use App\Exports\SemuaUMKM;
 use App\Http\Controllers\Controller;
+use App\Mail\UMKMDiterima;
+use App\Mail\UMKMDitolak;
 use App\Model\Alamat;
 use App\Model\Desa;
 use App\Model\JenisUsaha;
@@ -15,6 +18,9 @@ use App\Model\User;
 use App\Http\Requests\CreateUmkm;
 use App\Http\Requests\UpdateModal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class UmkmController extends Controller
 {
@@ -34,6 +40,9 @@ class UmkmController extends Controller
         return view('page/backoffice/umkm/index', $payload);
     }
 
+    public function exportAll() {
+        return Excel::download(new SemuaUMKM, 'data-umkm-sidoarjo.xlsx');
+    }
 
     public function create()
     {
@@ -142,10 +151,12 @@ class UmkmController extends Controller
             case 'approve':
                 $umkm->telah_diterima = true;
                 $umkm->diterima_pada = date("Y-m-d");
+                Mail::to($umkm->user->email)->send(new UMKMDiterima($umkm));
                 break;
             case 'deny':
                 $umkm->telah_diterima = false;
                 $umkm->diterima_pada = date("Y-m-d"); // TODO : GANTI diterima_pada jadi approval_pada
+                Mail::to($umkm->user->email)->send(new UMKMDitolak($umkm));
                 break;
             default:
                 break;
@@ -154,5 +165,12 @@ class UmkmController extends Controller
         $umkm->save();
 
         return redirect('backoffice/umkm?status=pending')->with('success_message', 'Berhasil melakukan approval terhadap UMKM');
+    }
+
+    public function cetak($id) {
+        $payload['umkm'] = Umkm::find($id);
+        if (!$payload['umkm']) redirect('backoffice/umkm')->with('failed_message', 'Data UMKM tidak ditemukan');
+
+        return view('pdf/data-umkm', $payload);;
     }
 }

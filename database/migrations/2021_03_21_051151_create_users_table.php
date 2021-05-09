@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('pendidikan_terakhir', 50)->nullable();
             $table->string('foto_profil', 100)->nullable();
             $table->boolean('telah_terverifikasi')->nullable();
+            $table->string('kode_verifikasi')->nullable();
             $table->timestamps();
         });
     }

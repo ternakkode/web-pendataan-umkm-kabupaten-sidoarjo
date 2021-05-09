@@ -4,7 +4,10 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary float-left">Data UMKM</h6>
-        <a href="{{ url('backoffice/umkm/create') }}" type="button" class="btn btn-success float-right btn-sm">Tambah Data UMKM</a>
+        <div class="cta-wrapper float-right mt-1">
+            <a href="{{ url('backoffice/export/umkm') }}" type="button" class="btn btn-primary btn-sm mb-1">Export Data UMKM</a>
+            <a href="{{ url('backoffice/umkm/create') }}" type="button" class="btn btn-success btn-sm mb-1">Tambah Data UMKM</a>
+        </div>
     </div>
     <div class="card-body">
         <table class="table">
@@ -35,6 +38,7 @@
                     @endif
                     </td>
                     <td>
+                        <a target="_blank" href="{{ url('backoffice/umkm/'.$u->id.'/cetak')}}" class="btn btn-secondary btn-sm d-inline">CETAK</a>
                         <a href="{{ url('backoffice/umkm/'.$u->id)}}" class="btn btn-secondary btn-sm d-inline">DETAIL</a>
                         <a href="{{ url('backoffice/umkm/'.$u->id.'/produk')}}" class="btn btn-warning btn-sm d-inline">PRODUK</a>
                         @if($status == 'all')
@@ -42,7 +46,7 @@
                         <form method="POST" action="{{ url('backoffice/umkm/'.$u->id)}}" class="d-inline">
                             @method('DELETE')
                             @csrf
-                            <button class="btn btn-danger btn-sm">HAPUS</button>
+                            <button class="btn btn-danger btn-sm mt-2">HAPUS</button>
                         </form>
                         @elseif($status == 'pending' && empty($diterima_pada))
                         <a href="{{ url('backoffice/umkm/'.$u->id.'/approval?status=approve')}}" class="btn btn-success btn-sm d-inline">TERIMA</a>
