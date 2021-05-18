@@ -1,0 +1,38 @@
+.detail-umkm {
+    .informasi-umkm {
+        .card-header {
+            background-color: white;
+        }
+
+        .umkm-owner-information-card {
+            background-color: $main-yellow;
+            border-radius: 18px;
+
+            .profile-information-wrapper {
+                .profile-information-detail {
+                    margin-bottom: 15px;
+
+                    .profile-information-detail-title {
+                        color: white;
+                    }
+                    
+                    .profile-information-detail-description {
+                        color: #203444;
+                    }
+                }
+            }
+        }
+
+        .umkm-information-detail-wrapper {
+            padding-bottom: 20px;
+
+            .umkm-information-detail-title {
+                color: #797979;
+            }
+
+            .umkm-information-detail-description {
+                color: #000000;
+            }
+        }
+    }
+}

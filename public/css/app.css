@@ -1,18 +1,80 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 
 a {
-  color: #FFFFFF;
   text-decoration: none !important;
 }
-a:hover {
+
+.header a,
+.footer a {
+  color: #FFFFFF;
+}
+.header a:hover,
+.footer a:hover {
   color: #F6B845;
 }
 
-.navbar {
+.secondary-hero {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  padding-top: 75px;
+  background-image: url("/img/secondary-header.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.secondary-hero .secondary-hero-main-title {
+  letter-spacing: 1.5px;
+}
+
+.card-program-kami {
+  height: 320px;
+  border-radius: 5px;
+  border-color: transparent;
+  color: white;
+  padding: 80px 0px;
+}
+
+.card-type-one {
   background-color: #408DBE;
+}
+
+.card-type-two {
+  background-color: #F6B845;
+}
+
+.navbar {
+  padding-left: 50px !important;
+}
+@media (min-width: 320px) {
+  .navbar {
+    background-color: #408DBE;
+  }
+  .navbar .navbar-brand {
+    max-width: 70%;
+  }
+  .navbar .navbar-nav {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .navbar {
+    background-color: transparent;
+    position: absolute;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .navbar .nav-item {
+    margin: 0 15px;
+  }
+  .navbar .navbar-nav {
+    padding-left: 100px;
+  }
 }
 .navbar .btn-register {
   background-color: #FFFFFF;
@@ -97,24 +159,6 @@ a:hover {
   transform: rotate(-45deg);
   top: 21px;
   left: 8px;
-}
-@media (min-width: 320px) {
-  .navbar .navbar-brand {
-    max-width: 70%;
-  }
-  .navbar .navbar-nav {
-    text-align: center;
-  }
-}
-@media (min-width: 768px) {
-  .navbar {
-    padding-left: 100px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-  .navbar .nav-item {
-    margin: 0 15px;
-  }
 }
 
 @media (min-width: 320px) {
@@ -217,6 +261,248 @@ a:hover {
   .auth-page .detail-verification-wrapper {
     padding: 20px 180px;
   }
+}
+
+.landing-page .hero {
+  background-color: #408DBE;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 75px;
+}
+.landing-page .hero .hero-title {
+  letter-spacing: 1.6px;
+  margin-bottom: 25px;
+}
+.landing-page .hero .hero-title .first-title {
+  color: white;
+}
+.landing-page .hero .hero-title .second-title {
+  color: #F6B845;
+}
+.landing-page .hero .hero-description {
+  color: white;
+}
+.landing-page .hero .image-wrapper img {
+  margin-left: 50px;
+  margin-top: 70px;
+}
+.landing-page .hero .btn-register {
+  padding: 10px 23px;
+  margin-top: 20px;
+  background-color: #408DBE;
+  border-color: white;
+  border-radius: 30px;
+  color: #FFFFFF;
+}
+.landing-page .hero .btn-register:hover {
+  background-color: #FFFFFF;
+  border-color: #408DBE;
+  color: #408DBE;
+}
+.landing-page .program-kami {
+  background-color: #F8F9F9;
+  min-height: 100vh;
+  padding: 100px 0;
+}
+.landing-page .produk-umkm {
+  min-height: 100vh;
+}
+.landing-page .produk-umkm .card-img-top {
+  height: 252px;
+}
+.landing-page .produk-umkm a .card-title {
+  color: #000;
+}
+.landing-page .produk-umkm a .card-text {
+  color: #89A23D;
+}
+.landing-page .btn-cta {
+  padding: 10px 15px;
+  background-color: #F6B845;
+  border-color: white;
+  border-radius: 30px;
+  color: #FFFFFF;
+}
+.landing-page .btn-cta:hover {
+  background-color: #FFFFFF;
+  border-color: #F6B845;
+  color: #F6B845;
+}
+
+.daftar-produk {
+  min-height: 100vh;
+}
+.daftar-produk .search-container {
+  display: block;
+  margin: 0 auto;
+}
+.daftar-produk input#search-bar {
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+}
+.daftar-produk input#search-bar:focus {
+  border: 1px solid #008ABF;
+  transition: 0.35s ease;
+  color: #008ABF;
+}
+.daftar-produk input#search-bar:focus::-webkit-input-placeholder {
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+.daftar-produk input#search-bar:focus::-moz-placeholder {
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+.daftar-produk input#search-bar:focus:-ms-placeholder {
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+.daftar-produk .search-icon {
+  position: relative;
+  float: right;
+  width: 75px;
+  height: 75px;
+  top: -62px;
+}
+.daftar-produk .row {
+  width: 100%;
+  margin-left: 0px !important;
+}
+.daftar-produk .product-list a .card-title {
+  color: #000;
+}
+.daftar-produk .product-list a .card-text {
+  color: #89A23D;
+}
+
+.data-umkm {
+  background-color: #E5E5E5;
+}
+.data-umkm .card-statistic {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+@media (min-width: 768px) {
+  .data-umkm .card-statistic {
+    width: 250px;
+  }
+}
+.data-umkm .card-statistic p {
+  margin-bottom: 3px;
+  color: #408DBE;
+}
+.data-umkm .card-statistic h1 {
+  margin-top: 0px;
+  color: #F6B845;
+}
+
+.detail-umkm .informasi-umkm .card-header {
+  background-color: white;
+}
+.detail-umkm .informasi-umkm .umkm-owner-information-card {
+  background-color: #F6B845;
+  border-radius: 18px;
+}
+.detail-umkm .informasi-umkm .umkm-owner-information-card .profile-information-wrapper .profile-information-detail {
+  margin-bottom: 15px;
+}
+.detail-umkm .informasi-umkm .umkm-owner-information-card .profile-information-wrapper .profile-information-detail .profile-information-detail-title {
+  color: white;
+}
+.detail-umkm .informasi-umkm .umkm-owner-information-card .profile-information-wrapper .profile-information-detail .profile-information-detail-description {
+  color: #203444;
+}
+.detail-umkm .informasi-umkm .umkm-information-detail-wrapper {
+  padding-bottom: 20px;
+}
+.detail-umkm .informasi-umkm .umkm-information-detail-wrapper .umkm-information-detail-title {
+  color: #797979;
+}
+.detail-umkm .informasi-umkm .umkm-information-detail-wrapper .umkm-information-detail-description {
+  color: #000000;
+}
+
+.blog {
+  background-color: #F8F9F9;
+}
+.blog .blog-card {
+  position: relative;
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  height: 300px;
+}
+.blog .blog-card:before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: -moz-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+  background: -webkit-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(18%, transparent), color-stop(99%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background: -o-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#cc000000", GradientType=0);
+}
+.blog .blog-card .blog-card-text {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  padding: 20px;
+  max-width: 350px;
+}
+.blog .blog-card .blog-card-text h2 {
+  font-size: 1rem;
+}
+
+.detail-produk {
+  background-color: #F8F9F9;
+}
+.detail-produk .product-image-wrapper {
+  height: 85vh;
+}
+.detail-produk .product-image-wrapper .product-image-main {
+  width: 100%;
+  height: auto;
+}
+.detail-produk .product-information-wrapper {
+  height: 85vh;
+  overflow: scroll;
+}
+.detail-produk .product-information-wrapper .product-price, .detail-produk .product-information-wrapper .product-category {
+  color: #408DBE;
+}
+.detail-produk .product-information-wrapper .product-category span {
+  color: black;
+}
+.detail-produk .owl-carousel .item {
+  cursor: pointer;
+}
+.detail-produk .umkm-information .btn-ke-toko {
+  border-radius: 10px;
+  color: #000000;
+}
+.detail-produk .umkm-information .btn-ke-toko:hover {
+  color: #fff;
+}
+.detail-produk .umkm-information .divider {
+  border-left: 3px solid #408DBE;
+}
+.detail-produk .umkm-information .umkm-information-detail .umkm-information-detail-title {
+  font-weight: bold;
+  color: #797979;
 }
 
 /*# sourceMappingURL=app.css.map */

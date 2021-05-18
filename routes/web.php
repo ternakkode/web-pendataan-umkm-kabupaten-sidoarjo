@@ -1,6 +1,13 @@
 <?php
 
 Route::get('/', 'BrandingController@index');
+Route::get('produk', 'BrandingController@produk');
+Route::get('produk/{id}', 'BrandingController@detailProduk');
+Route::get('umkm', 'BrandingController@umkm');
+Route::get('umkm/{id}', 'BrandingController@detailUmkm');
+Route::get('informasi', 'BrandingController@informasi');
+Route::get('informasi/{id}', 'BrandingController@detailInformasi');
+Route::get('tentang-kami', 'BrandingController@tentangKami');
 
 Route::get('/app/login', 'AuthenticationController@appLogin');
 Route::get('/app/register', 'AuthenticationController@appRegister');
@@ -11,7 +18,7 @@ Route::get('/backoffice/login', 'AuthenticationController@backofficeLogin');
 Route::post('/login', 'AuthenticationController@processLogin');
 Route::post('/logout', 'AuthenticationController@logout');
 
-Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user'], 'namespace' => 'App', 'name' => 'app.'], function () {
+Route::group(['prefix' => 'app', 'middleware' => ['is.authenticated', 'is.user', 'validate.back'], 'namespace' => 'App', 'name' => 'app.'], function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/complete', 'ProfileController@complete');
         Route::post('/complete', 'ProfileController@processComplete');

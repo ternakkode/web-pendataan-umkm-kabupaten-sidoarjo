@@ -1,0 +1,52 @@
+.detail-produk {
+    background-color: #F8F9F9;
+    
+    .product-image-wrapper {
+        height: 85vh;
+
+        .product-image-main {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .product-information-wrapper {
+        height: 85vh;
+        overflow: scroll;
+        
+        .product-price, .product-category {
+            color: $main-blue;
+        }
+
+        .product-category span {
+            color: black;
+        }
+    }
+
+    .owl-carousel {
+        .item {
+            cursor: pointer;
+        }
+    }
+
+    .umkm-information {
+        .btn-ke-toko {
+            border-radius: 10px;
+            color: #000000;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        .divider {
+            border-left: 3px solid $main-blue;
+        }
+
+        .umkm-information-detail {
+            .umkm-information-detail-title {
+                color: #797979;
+            }
+        }
+    }
+}

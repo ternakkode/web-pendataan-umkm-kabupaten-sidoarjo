@@ -1,5 +1,32 @@
 .navbar {
-    background-color: $main-blue;
+    padding-left: 50px !important;
+
+    @media (min-width: 320px) {
+        .navbar-brand {
+            max-width: 70%;
+        }
+        
+        .navbar-nav {
+            text-align: center;
+        }
+        
+        background-color: $main-blue;
+    }
+
+    @media (min-width: 768px) {
+        background-color: transparent;
+        position: absolute;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .navbar-nav {
+            padding-left: 100px;
+        }
+    }
 
     .btn-register {
         background-color: #FFFFFF;
@@ -98,26 +125,6 @@
                     left: 8px;
                 }
             }
-        }
-    }
-
-    @media (min-width: 320px) {
-        .navbar-brand {
-            max-width: 70%;
-        }
-        
-        .navbar-nav {
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 768px) {
-        padding-left: 100px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-
-        .nav-item {
-            margin: 0 15px;
         }
     }
 }

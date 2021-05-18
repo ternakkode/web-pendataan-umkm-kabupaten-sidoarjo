@@ -16,7 +16,7 @@ use App\Model\Modal;
 use App\Model\Umkm;
 use App\Model\User;
 use App\Http\Requests\CreateUmkm;
-use App\Http\Requests\UpdateModal;
+use App\Http\Requests\UpdateUmkm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
@@ -109,7 +109,7 @@ class UmkmController extends Controller
         return view('page/backoffice/umkm/edit', $payload);
     }
 
-    public function update(UpdateModal $request, $id)
+    public function update(UpdateUmkm $request, $id)
     {
         $input = $request->validated();
         

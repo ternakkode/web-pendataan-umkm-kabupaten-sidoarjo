@@ -1,0 +1,83 @@
+.landing-page {
+    .hero {
+        background-color: $main-blue;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: 75px;
+
+        .hero-title {
+            letter-spacing: 1.6px;
+            margin-bottom: 25px;
+
+            .first-title {
+                color: white;
+            }
+
+            .second-title {
+                color: $main-yellow;
+            }
+        }
+
+        .hero-description {
+            color: white;
+        }
+
+        .image-wrapper img {
+            margin-left: 50px;
+            margin-top: 70px;
+        }
+
+        .btn-register {
+            padding: 10px 23px;
+            margin-top: 20px;
+            background-color: $main-blue;
+            border-color: white;
+            border-radius: 30px;
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: #FFFFFF;
+                border-color: $main-blue;
+                color: $main-blue;
+            }
+        }
+    }
+
+    .program-kami {
+        background-color: #F8F9F9;
+        min-height: 100vh;
+        padding: 100px 0;
+    }
+
+    .produk-umkm {
+        min-height: 100vh;
+
+        .card-img-top {
+            height: 252px;
+        }
+
+        a {
+            .card-title {
+                color: #000;
+            }
+
+            .card-text {
+                color: #89A23D;
+            }
+        }
+    }
+
+    .btn-cta {
+        padding: 10px 15px;
+        background-color: $main-yellow;
+        border-color: white;
+        border-radius: 30px;
+        color: #FFFFFF;
+
+        &:hover {
+            background-color: #FFFFFF;
+            border-color: $main-yellow;
+            color: $main-yellow;
+        }
+    }
+}

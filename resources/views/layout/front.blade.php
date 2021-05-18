@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/61ea652ee7.js" crossorigin="anonymous"></script>
 
@@ -27,7 +29,7 @@
 <body>
     <section class="header">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('') }}">
                 <img src="{{ asset('img/logo.svg') }}" alt="" class="img-fluid w-75">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerCollapse"
@@ -38,19 +40,19 @@
             <div class="collapse navbar-collapse" id="navbarTogglerCollapse">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Beranda</a>
+                        <a class="nav-link" href="{{ url('') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Data</a>
+                        <a class="nav-link" href="{{ url('umkm') }}">Data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Produk</a>
+                        <a class="nav-link" href="{{ url('produk') }}">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Info</a>
+                        <a class="nav-link" href="{{ url('informasi') }}">Info</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tentang Kami</a>
+                        <a class="nav-link" href="{{ url('tentang-kami') }}">Tentang Kami</a>
                     </li>
                     @if(session('is_logged_in'))
                         @if(session('role') == 'user')
@@ -189,7 +191,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
     <script>
         $(document).ready(function () {

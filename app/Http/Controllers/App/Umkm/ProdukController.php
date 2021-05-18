@@ -67,7 +67,7 @@ class ProdukController extends Controller
         $payload['produk'] = Produk::find($idProduk);
         if (!$payload['produk']) redirect('app/umkm/produk')->with('failed_message', 'Data Produk UMKM tidak ditemukan');
         
-        return view('page/backoffice/umkm/produk/edit', $payload);
+        return view('page/umkm/produk/edit', $payload);
     }
 
     public function update(UpdateProduk $request, $idProduk)
@@ -85,7 +85,7 @@ class ProdukController extends Controller
         $oldStorageFolder = config('url.tmp_product');
         $newStorageFolder = config('url.product');
 
-        if ($input['foto']) {
+        if (isset($input['foto'])) {
             foreach ($input['foto'] as $foto) {
                 $moveFile = Storage::move($oldStorageFolder. '/' .$foto, $newStorageFolder. '/' .$foto);
                 if ($moveFile) {
@@ -102,7 +102,7 @@ class ProdukController extends Controller
         return redirect('app/umkm/produk')->with('success_message', 'Berhasil mengubah data Produk UMKM');
     }
 
-    public function destroy($idUmkm, $idProduk)
+    public function destroy($idProduk)
     {
         $produk = Produk::find($idProduk);
         if (!$produk) redirect('app/umkm/produk')->with('failed_message', 'Data Produk tidak ditemukan');
