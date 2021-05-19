@@ -11,6 +11,6 @@ class Informasi extends Model
     protected $guarded = [];
 
     public function admin() {
-        return $this->belongsTo('App\Model\Admin');
+        return $this->belongsTo('App\Model\Admin', 'id_admin');
     }
 }
