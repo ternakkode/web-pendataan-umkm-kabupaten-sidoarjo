@@ -1,4 +1,4 @@
-@extends('layout.front')
+@extends('layout.front', ['page' => 'produk'])
 @section('title', 'Detail Produk')
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -14,64 +14,39 @@
     <div class="container pb-5">
         <div class="informasi-produk-wrapper row pt-5 pb-5">
             <div class="col-md-6 order-md-1 product-image-wrapper">
-                <img src="{{ url('img/detail-produk-demo.png') }}" class="product-image-main img-fluid" alt="">
+                @foreach($produk->foto as $foto)
+                @if($foto->foto_utama)
+                <img src="{{ product_image_link($foto->url) }}" class="product-image-main img-fluid" alt="">
+                @endif
+                @endforeach
+
             </div>
             <div class="col-md-6 order-md-3">
                 <div class="owl-carousel owl-theme">
+                    @foreach($produk->foto as $foto)
                     <div class="item">
-                        <img src="{{ url('img/detail-produk-demo.png') }}">
+                        <img src="{{ product_image_link($foto->url) }}">
                     </div>
-                    <div class="item">
-                        <img src="{{ url('img/demo-profile.jpg') }}">
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/detail-produk-demo.png') }}">
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/demo-profile.jpg') }}">
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/detail-produk-demo.png') }}">
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/demo-profile.jpg') }}">
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-6 order-md-2 product-information-wrapper">
-                <h1 class="product-title font-weight-bold">Telur Pitan</h1>
-                <h5 class="product-price">Rp. 13.000</h5>
+                <h1 class="product-title font-weight-bold">{{ $produk->nama }}</h1>
+                <h5 class="product-price">Rp. {{ format_angka($produk->harga) }}</h5>
                 <p class="product-category"><span class="font-weight-bold product-category-title">Kategori : </span>
-                    Makanan & Minuman</p>
+                    {{ $produk->umkm->jenisUsaha->nama }}</p>
                 <p class="product-description-title font-weight-bold">Deskripsi : </p>
-                <p class="product-description-detail text-muted">
-                    Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                    auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet lorem quis
-                    bibendum auctor, nisi elit consequat
-                    Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                    auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet lorem quis
-                    bibendum auctor, nisi elit consequat
-                    Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                    auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet lorem quis
-                    bibendum auctor, nisi elit consequat
-                    Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                    auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet lorem quis
-                    bibendum auctor, nisi elit consequat
-                    Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                    auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet lorem quis
-                    bibendum auctor, nisi elit consequat
-                    Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                    auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet lorem quis
-                    bibendum auctor, nisi elit consequat
-                </p>
+                <div class="product-description-detail text-muted">
+                    {!! $produk->deskripsi !!}
+                </div>
             </div>
         </div>
         <div class="card shadow-sm umkm-information">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <p class="font-weight-bold">CV KARYA ANAK BANGSA</p>
-                        <a href="" class="btn btn-sm btn-outline-secondary btn-ke-toko"><i class="fas fa-store"></i>
+                        <p class="font-weight-bold">{{ $produk->umkm->nama_usaha }}</p>
+                        <a href="{{ url('umkm/'.$produk->umkm->id) }}" class="btn btn-sm btn-outline-secondary btn-ke-toko"><i class="fas fa-store"></i>
                             Kunjungi Toko</a>
                     </div>
                     <div class="col-md-1 divider d-none d-sm-block">
@@ -82,19 +57,20 @@
                                 Nama Pemilik
                             </div>
                             <div class="col-md-9 umkm-information-detail-description">
-                                Naufal Rinaldi
+                                {{ $produk->umkm->user->nama }}
                             </div>
                             <div class="col-md-3 font-weight-bold umkm-information-detail-title">
                                 Jenis Usaha
                             </div>
                             <div class="col-md-9 umkm-information-detail-description">
-                                Makanan Minuman
+                                {{ $produk->umkm->jenisUsaha->nama }}
                             </div>
                             <div class="col-md-3 font-weight-bold umkm-information-detail-title">
                                 Alamat Usaha
                             </div>
                             <div class="col-md-9  umkm-information-detail-description">
-                                Jl Pasar Buduran Rt 09 Rw 04 Kecamatan Buduran
+                            {{ $produk->umkm->alamat->detail }}, Desa {{ $produk->umkm->alamat->desa->nama }}, Kecamatan
+                                {{ $produk->umkm->alamat->kecamatan->nama }}
                             </div>
                         </div>
                     </div>

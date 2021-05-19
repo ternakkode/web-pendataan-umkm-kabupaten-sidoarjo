@@ -40,19 +40,19 @@
             <div class="collapse navbar-collapse" id="navbarTogglerCollapse">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('') }}">Beranda</a>
+                        <a class="nav-link @if($page == 'beranda') active @endif" href="{{ url('') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('umkm') }}">Data</a>
+                        <a class="nav-link @if($page == 'data') active @endif" href="{{ url('umkm') }}">Data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('produk') }}">Produk</a>
+                        <a class="nav-link @if($page == 'produk') active @endif" href="{{ url('produk') }}">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('informasi') }}">Info</a>
+                        <a class="nav-link @if($page == 'informasi') active @endif" href="{{ url('informasi') }}">Info</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('tentang-kami') }}">Tentang Kami</a>
+                        <a class="nav-link @if($page == 'tentang-kami') active @endif" href="{{ url('tentang-kami') }}">Tentang Kami</a>
                     </li>
                     @if(session('is_logged_in'))
                         @if(session('role') == 'user')
@@ -97,22 +97,22 @@
                             <div class="sitelink-wrapper">
                                 <ul class="sitelink">
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ url('') }}">
                                             Beranda
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ url('umkm') }}">
                                             Data
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            Blog
+                                        <a href="{{ url('informasi') }}">
+                                            Informasi
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ url('tentang-kami') }}">
                                             Tentang Kami
                                         </a>
                                     </li>

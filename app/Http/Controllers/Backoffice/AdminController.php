@@ -57,7 +57,7 @@ class AdminController extends Controller
 
         $admin->nama = $input['nama'];
         $admin->username = $input['username'];
-        $admin->password = Hash::make($input['password']) ?? $admin->password;
+        $admin->password = isset($input['password']) ? Hash::make($input['password']) : $admin->password; 
         $admin->save();
 
         return redirect('backoffice/admin')->with('success_message', 'Berhasil mengubah data Pengurus');

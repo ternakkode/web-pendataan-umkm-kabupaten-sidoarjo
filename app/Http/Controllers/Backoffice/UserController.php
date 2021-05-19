@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backoffice;
 
 use App\Http\Controllers\Controller;
+use App\Mail\VerifikasiEmail;
 use App\Model\Desa;
 use App\Model\User;
 use App\Model\Kecamatan;
@@ -10,6 +11,7 @@ use App\Http\Requests\CreateUser;
 use App\Http\Requests\UpdateUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -40,6 +42,7 @@ class UserController extends Controller
         $user->nama = $input['nama'];
         $user->nik = $input['nik'];
         $user->no_hp = $input['no_hp'];
+        $user->kode_verifikasi = sha1(time());
         $user->pendidikan_terakhir = $input['pendidikan_terakhir'];
 
         $fileName = uniqid() . '_' . trim($input['foto_profil']->getClientOriginalName());
@@ -53,7 +56,7 @@ class UserController extends Controller
             'detail' => $input['detail_alamat']
         ]);
 
-        // TODO : kirim email ke user baru
+        Mail::to($user->email)->send(new VerifikasiEmail($user));
         return redirect('backoffice/user')->with('success_message', 'Berhasil menambahkan User baru');
     }
 
@@ -80,11 +83,13 @@ class UserController extends Controller
             $input['foto_profil']->storeAs(config('url.profile'), $fileName);
         }
 
+        $oldMail = $user->email;
         $user->email = $input['email'];
         $user->nama = $input['nama'];
         $user->nik = $input['nik'];
         $user->no_hp = $input['no_hp'];
         $user->pendidikan_terakhir = $input['pendidikan_terakhir'];
+        $user->password = isset($input['password']) ? Hash::make($input['password']) : $user->password; 
         $user->foto_profil = isset($fileName) ? $fileName : $user->foto_profil;
         $user->save();
         $user->alamat()->update([

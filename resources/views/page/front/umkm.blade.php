@@ -1,4 +1,4 @@
-@extends('layout.front')
+@extends('layout.front', ['page' => 'data'])
 @section('title', 'Daftar UMKM')
 @section('content')
 <div class="data-umkm">
@@ -29,20 +29,9 @@
 
     <div class="container-fluid pt-4">
         <div class="page-wrapper">
-            <div class="btn-group float-right">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Jenis Usaha
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ url('umkm') }}">Semua Jenis Usahas</a>
-                        @foreach($jenisUsaha as $j)
-                            <a class="dropdown-item" href="?jenis_usaha={{ $j->id }}">{{ $j->nama }}</a>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
+            <a href="{{ url('/statistik') }}" class="btn btn-primary btn-sm float-right" type="button">
+                Data Statistik
+            </a>
         </div>
     </div>
 
@@ -69,10 +58,11 @@
                             <td>{{ $u->nama_usaha }}</td>
                             <td>{{ $u->user->nama }}</td>
                             <td>{{ $u->user->alamat->detail }}, Desa {{ $u->user->alamat->desa->nama }}, Kecamatan
-                    {{ $u->user->alamat->kecamatan->nama }}</td>
+                                {{ $u->user->alamat->kecamatan->nama }}</td>
                             <td>{{ $u->alamat->detail }}, Desa {{ $u->alamat->desa->nama }}, Kecamatan
-                    {{ $u->alamat->kecamatan->nama }}</td>
-                            <td><a href="{{ url('umkm/'.$u->id) }}" class="btn btn-sm btn-primary" style="border-radius:10px">Detail</a></td>
+                                {{ $u->alamat->kecamatan->nama }}</td>
+                            <td><a href="{{ url('umkm/'.$u->id) }}" class="btn btn-sm btn-primary"
+                                    style="border-radius:10px">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>

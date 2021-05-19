@@ -4,6 +4,7 @@ Route::get('/', 'BrandingController@index');
 Route::get('produk', 'BrandingController@produk');
 Route::get('produk/{id}', 'BrandingController@detailProduk');
 Route::get('umkm', 'BrandingController@umkm');
+Route::get('statistik', 'BrandingController@statistik');
 Route::get('umkm/{id}', 'BrandingController@detailUmkm');
 Route::get('informasi', 'BrandingController@informasi');
 Route::get('informasi/{id}', 'BrandingController@detailInformasi');

@@ -1,4 +1,4 @@
-@extends('layout.front')
+@extends('layout.front', ['page' => 'data'])
 @section('title', 'Detail UMKM')
 @section('content')
 <div class="detail-umkm">
@@ -12,7 +12,7 @@
     <div class="container-fluid informasi-umkm">
         <div class="card mr-sm-5 ml-sm-5 mt-5">
             <div class="card-header">
-                <h3 class="font-weight-bold">CV KARYA ANAK BANGSA</h3>
+                <h3 class="font-weight-bold">{{ $umkm->nama_usaha }}</h3>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -20,7 +20,8 @@
                         <div class="card umkm-owner-information-card">
                             <div class="card-body tex-center">
                                 <div class="profile-image-wrapper text-center">
-                                    <img class="rounded-circle img-thumbnail" src="{{ url('img/demo-profile.jpg') }}">
+                                    <img class="rounded-circle img-thumbnail"
+                                        src="{{ url(profile_image_link($umkm->user->foto_profil)) }}">
                                 </div>
                                 <div class="profile-information-wrapper font-weight-bold">
                                     <div class="profile-information-detail">
@@ -28,7 +29,7 @@
                                             Nama
                                         </div>
                                         <div class="profile-information-detail-description">
-                                            Naufal Rinaldi
+                                            {{ $umkm->user->nama }}
                                         </div>
                                     </div>
                                     <div class="profile-information-detail">
@@ -36,7 +37,7 @@
                                             NIK
                                         </div>
                                         <div class="profile-information-detail-description">
-                                            17668637162321
+                                            {{ $umkm->user->nik }}
                                         </div>
                                     </div>
                                     <div class="profile-information-detail">
@@ -44,7 +45,7 @@
                                             Pendidikan Terakhir
                                         </div>
                                         <div class="profile-information-detail-description">
-                                            SMA
+                                            {{ strtoupper($umkm->user->pendidikan_terakhir) }}
                                         </div>
                                     </div>
                                     <div class="profile-information-detail">
@@ -52,7 +53,7 @@
                                             No Telefon
                                         </div>
                                         <div class="profile-information-detail-description">
-                                            08983840564
+                                            {{ $umkm->user->no_hp }}
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +66,7 @@
                                 NIB
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 1234567890
+                                {{ $umkm->nib }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -73,7 +74,7 @@
                                 Nama Usaha
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 Bakso Pa Nanang
+                                {{ $umkm->nama_usaha }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -81,7 +82,7 @@
                                 Nama Pemilik
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 Demo User
+                                {{ $umkm->user->nama }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -89,7 +90,7 @@
                                 NPWP
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 09.254.294.3-407.000
+                                {{ $umkm->npwp }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -97,9 +98,8 @@
                                 Alamat Usaha
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 DISINI SENANG DISANA SENANG DIMANA MANA HATIKU SENANG, Desa Bakalan Wringinpitu,
-                                Kecamatan
-                                Balongbendo
+                                {{ $umkm->alamat->detail }}, Desa {{ $umkm->alamat->desa->nama }}, Kecamatan
+                                {{ $umkm->alamat->kecamatan->nama }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -107,14 +107,14 @@
                                 Legalitas
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 P-IRT HALAL MERK BPPOM </div>
+                                @foreach($umkm->legalitas as $legalitas) {{ $legalitas->nama }} @endforeach </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
                             <div class="col-md-2 col-3 umkm-information-detail-title">
                                 Jenis Usaha
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 Makanan Minuman
+                                {{ $umkm->jenisUsaha->nama }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -122,7 +122,7 @@
                                 Lama Usaha
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 Diatas 5 Tahun
+                                {{ $umkm->lamaUsaha->nama }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -130,7 +130,7 @@
                                 Modal
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 &gt; 50 Jt
+                                {{ $umkm->modal->nama }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -138,7 +138,7 @@
                                 Tahun Pendataan
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 2021
+                                {{ $umkm->tahun_pendataan }}
                             </div>
                         </div>
                         <div class="row form-data umkm-information-detail-wrapper">
@@ -146,7 +146,7 @@
                                 Diterima Pada
                             </div>
                             <div class="col-md-10 col-9 umkm-information-detail-description">
-                                 2021-05-10
+                                {{ $umkm->diterima_pada }}
                             </div>
                         </div>
                     </div>
@@ -161,140 +161,48 @@
         <div class="row pl-sm-5 pr-sm-5 mt-5">
             <div class="col-md-10">
                 <form class="search-container">
-                    <input type="text" id="search-bar" placeholder="What can I help you with today?">
-                    <a href="#"><img class="search-icon"
+                    <input type="text" name="keyword" id="search-bar" placeholder="Nama Produk">
+                    <a href="#" onclick="$(this).closest('form').submit()"><img class="search-icon"
                             src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
                 </form>
             </div>
             <div class="col-md-2">
                 <div class="btn-group w-100">
-                    <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         Kategori
                     </button>
                     <div class="dropdown-menu">
-                        ...
+                        <a class="dropdown-item" href="{{ url('umkm') }}">Semua Jenis Usaha</a>
+                        @foreach($jenisUsaha as $j)
+                        <a class="dropdown-item" href="?jenis_usaha={{ $j->id }}">{{ $j->nama }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center product-list pl-sm-5 pr-sm-5 mr-0 ml-0">
+            @foreach ($paginatedProduk as $produk)
             <div class="col-md-3 mb-3 text-center">
-                <a href="">
+                <a href="{{ url('produk/'.$produk->id) }}">
                     <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
+                        @foreach($produk->foto as $foto)
+                        @if($foto->foto_utama)
+                        <img class="card-img-top" src="{{ product_image_link($foto->url) }}" alt="Card image cap">
+                        @endif
+                        @endforeach
                         <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
+                            <p class="card-title">{{ $produk->nama }}</p>
+                            <p class="card-text">Rp. {{ format_angka($produk->harga) }}</p>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 mb-3 text-center">
-                <a href="">
-                    <div class="card shadow-sm mx-5 mx-sm-0">
-                        <img class="card-img-top" src="{{ url('img/produk-demo-1.png') }}" alt="Card image cap">
-                        <div class="card-body font-weight-bold">
-                            <p class="card-title">Fresh Detox Blueberry</p>
-                            <p class="card-text">Rp. 30.000</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
 
         <div class="pagination-wrapper justify-content-center d-flex mt-5 pb-3">
-            <ul class="pagination">
-
-                <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
-                    <span class="page-link" aria-hidden="true">&lsaquo;</span>
-                </li>
-                <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=2">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=3">3</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=4">4</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=5">5</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=6">6</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=7">7</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=8">8</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="https://rajabrawijaya.ub.ac.id/ukm?page=2" rel="next"
-                        aria-label="Next &raquo;">&rsaquo;</a>
-                </li>
-            </ul>
+            {{ $paginatedProduk->appends(request()->query())->links() }}
         </div>
     </div>
 </div>

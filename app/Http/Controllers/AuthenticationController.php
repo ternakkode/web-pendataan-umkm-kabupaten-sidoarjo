@@ -28,7 +28,7 @@ class AuthenticationController extends Controller {
         $user->nama = $input['nama'];
         $user->kode_verifikasi = sha1(time());
         $user->save();
-
+        
         Mail::to($user->email)->send(new VerifikasiEmail($user));
         $this->addSession('user', $user);
 

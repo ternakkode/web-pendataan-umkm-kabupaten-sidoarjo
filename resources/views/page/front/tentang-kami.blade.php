@@ -1,4 +1,4 @@
-@extends('layout.front')
+@extends('layout.front', ['page' => 'tentang-kami'])
 @section('title', 'Daftar Produk')
 @section('content')
 <div class="tentang-kami">

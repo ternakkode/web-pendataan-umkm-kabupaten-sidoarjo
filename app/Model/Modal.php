@@ -11,7 +11,7 @@ class Modal extends Model
     public $timestamps = false;
     protected $guarded = [];
 
-    public function modal() {
+    public function umkm() {
         return $this->hasMany('App\Model\Umkm', 'id_modal');
     }
 }

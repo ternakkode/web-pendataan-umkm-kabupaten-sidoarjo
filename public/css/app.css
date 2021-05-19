@@ -17,6 +17,10 @@ a {
   color: #F6B845;
 }
 
+.active {
+  color: #F6B845 !important;
+}
+
 .secondary-hero {
   display: flex;
   color: white;
@@ -427,6 +431,10 @@ a {
   color: #000000;
 }
 
+.product-list .card-img-top {
+  height: 252px;
+}
+
 .blog {
   background-color: #F8F9F9;
 }
@@ -475,7 +483,7 @@ a {
 }
 .detail-produk .product-image-wrapper .product-image-main {
   width: 100%;
-  height: auto;
+  height: 90%;
 }
 .detail-produk .product-information-wrapper {
   height: 85vh;
@@ -501,7 +509,6 @@ a {
   border-left: 3px solid #408DBE;
 }
 .detail-produk .umkm-information .umkm-information-detail .umkm-information-detail-title {
-  font-weight: bold;
   color: #797979;
 }
 

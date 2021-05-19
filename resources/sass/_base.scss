@@ -26,6 +26,10 @@ a {
     }
 }
 
+.active {
+    color: $main-yellow !important;
+}
+
 .secondary-hero {
     display: flex;
     color: white;

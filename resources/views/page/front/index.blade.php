@@ -1,4 +1,4 @@
-@extends('layout.front')
+@extends('layout.front', ['page' => 'beranda'])
 @section('title', 'Halaman Awal')
 @section('content')
 <div class="landing-page">
@@ -110,7 +110,7 @@
         <div class="row justify-content-center blog-list pl-sm-5 pr-sm-5 mt-5 mr-0 ml-0">
             @foreach($informasiTerbaru as $informasi)
             <div class="col-md-4 mb-3">
-                <a href="" class="blog-card"
+                <a href="{{ url('informasi/'.$informasi->id) }}" class="blog-card"
                     style="background-image: url({{ information_image_link($informasi->foto) }})">
                     <div class="blog-card-text">
                         <h2 class="font-weight-bold">{{ $informasi->judul }}</h2>
@@ -132,8 +132,7 @@
     Swal.fire({
         icon: 'success',
         title: 'Berhasil!',
-        text: '{{session('
-        success_message ') }}'
+        text: '{{session('success_message') }}'
     })
 </script>
 @elseif (session('failed_message'))
@@ -141,8 +140,7 @@
     Swal.fire({
         icon: 'error',
         title: 'Gagal!',
-        text: '{{session('
-        failed_message ') }}'
+        text: '{{session('failed_message') }}'
     })
 </script>
 @endif

@@ -12,6 +12,6 @@ class JenisUsaha extends Model
     protected $guarded = [];
 
     public function umkm() {
-        return $this->hasMany('App\Model\Umkm', 'id_jenis_usaha_id');
+        return $this->hasMany('App\Model\Umkm', 'id_jenis_usaha');
     }
 }
