@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\App\Umkm;
 
 use App\Http\Controllers\Controller;
+use App\Model\FotoProduk;
 use App\Model\Produk;
 use App\Model\Umkm;
 use App\Http\Requests\CreateProduk;
@@ -84,6 +85,7 @@ class ProdukController extends Controller
         $photos = [];
         $oldStorageFolder = config('url.tmp_product');
         $newStorageFolder = config('url.product');
+        $currentProductImage = FotoProduk::where('id_produk', $idProduk)->get();
 
         if (isset($input['foto'])) {
             foreach ($input['foto'] as $foto) {
@@ -91,7 +93,7 @@ class ProdukController extends Controller
                 if ($moveFile) {
                     $newFoto = [];
                     $newFoto['url'] = $foto;
-                    $newFoto['foto_utama'] = empty($photos) ? 1 : 0;
+                    $newFoto['foto_utama'] = empty($photos) && $currentProductImage->isEmpty() ? 1 : 0;
                     array_push($photos, $newFoto);
                 }
             }
