@@ -13,15 +13,17 @@ class UMKMDitolak extends Mailable
     use Queueable, SerializesModels;
 
     public $umkm;
+    public $alasanPenolakan;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Umkm $umkm)
+    public function __construct(Umkm $umkm, $alasanPenolakan)
     {
         $this->umkm = $umkm;
+        $this->alasanPenolakan = $alasanPenolakan;
     }
 
     /**

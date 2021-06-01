@@ -156,7 +156,9 @@ class UmkmController extends Controller
             case 'deny':
                 $umkm->telah_diterima = false;
                 $umkm->diterima_pada = date("Y-m-d");
-                Mail::to($umkm->user->email)->send(new UMKMDitolak($umkm));
+
+                $alasanPenolakan = $request->query('alasan_penolakan');
+                Mail::to($umkm->user->email)->send(new UMKMDitolak($umkm, $alasanPenolakan));
                 break;
             default:
                 break;

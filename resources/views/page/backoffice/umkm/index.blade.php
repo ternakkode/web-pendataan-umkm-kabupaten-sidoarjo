@@ -50,7 +50,7 @@
                         </form>
                         @elseif($status == 'pending' && empty($diterima_pada))
                         <a href="{{ url('backoffice/umkm/'.$u->id.'/approval?status=approve')}}" class="btn btn-success btn-sm d-inline">TERIMA</a>
-                        <a href="{{ url('backoffice/umkm/'.$u->id.'/approval?status=deny')}}" class="btn btn-danger btn-sm d-inline">TOLAK</a>
+                        <button class="btn btn-danger btn-sm d-inline" data-toggle="modal" data-target="#denyUmkmModal" onclick="triggerDenyUmkm({{ $u->id }})">TOLAK</button>
                         @endif
                     </td>
                 </tr>
@@ -60,11 +60,45 @@
     </div>
 </div>
 @endsection
+@section('modal')
+<div class="modal fade" id="denyUmkmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <form method="GET" action="{{ url('backoffice/umkm/')}}" id="formDenyUmkm">
+        @csrf
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tolak UMKM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="status" value="deny">
+                    <div class="form-group">
+                        <label for="alasan">Alasan Penolakan</label>
+                        <textarea class="form-control" name="alasan_penolakan" rows="3" style="min-height:300px"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+                    <button type="submit" class="btn btn-danger">Tolak UMKM</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@endsection
 @section('js')
 <script type="text/javascript">
     $(document).ready(function () {
         $('.table').DataTable();
     });
+
+    function triggerDenyUmkm(id) {
+        let oldSubmitUrl = $('#formDenyUmkm').attr('action');
+        $('#formDenyUmkm').attr('action', `${oldSubmitUrl}/${id}/approval`);
+    }
 </script>
 @if (session('success_message'))
 <script type="text/javascript">
