@@ -81,19 +81,21 @@ class DashboardController extends Controller
         $input = $request->validated();
 
         $umkm = Umkm::find($input['id_umkm']);
-        $umkm->nib = $input['nib'];
+        $umkm->nib = isset($input['nib']) ? $input['nib'] : '';
+        $umkm->npwp = isset($input['npwp']) ? $input['npwp'] : '';
         $umkm->nama_usaha = $input['nama_usaha'];
         $umkm->id_lama_usaha = $input['lama_usaha'];
         $umkm->id_jenis_usaha = $input['jenis_usaha'];
         $umkm->id_modal = $input['modal'];
-        $umkm->npwp = $input['npwp'];
         $umkm->tahun_pendataan = date("Y");
         $umkm->diterima_pada = null;
         $umkm->alamat()->id_kecamatan = $input['kecamatan'];
         $umkm->alamat()->id_desa = $input['desa'];
         $umkm->alamat()->detail = $input['detail_alamat'];
-        $umkm->legalitas()->detach();
-        $umkm->legalitas()->attach($input['legalitas']);
+        if (isset($input['legalitas'])) {
+            $umkm->legalitas()->detach();
+            $umkm->legalitas()->attach($input['legalitas']);
+        }
         $umkm->save();
 
         return redirect('/app')->with('success_message', 'Selamat! Data UMKM anda telah berhasil diajukan ulang');

@@ -48,12 +48,12 @@ class AuthorizationController extends Controller
 
         $umkm = new Umkm();
         $umkm->id_user = $userId;
-        $umkm->nib = $input['nib'];
+        $umkm->nib = isset($input['nib']) ? $input['nib'] : '';
+        $umkm->npwp = isset($input['npwp']) ? $input['npwp'] : '';
         $umkm->nama_usaha = $input['nama_usaha'];
         $umkm->id_lama_usaha = $input['lama_usaha'];
         $umkm->id_jenis_usaha = $input['jenis_usaha'];
         $umkm->id_modal = $input['modal'];
-        $umkm->npwp = $input['npwp'];
         $umkm->tahun_pendataan = date("Y");
         $umkm->telah_diterima = false;
         $umkm->save();
@@ -64,7 +64,9 @@ class AuthorizationController extends Controller
             'detail' => $input['detail_alamat']
         ]);
         
-        $umkm->legalitas()->attach($input['legalitas']);
+        if (isset($input['legalitas'])) {
+            $umkm->legalitas()->attach($input['legalitas']);
+        }
 
         return redirect('/app')->with('success_message', 'Selamat! Pengajuan UMKM anda telah berhasil. Silahkan tunggu data anda disetujui');
     }
