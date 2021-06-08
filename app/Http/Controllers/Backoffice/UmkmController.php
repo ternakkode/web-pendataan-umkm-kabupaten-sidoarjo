@@ -62,13 +62,13 @@ class UmkmController extends Controller
         $input = $request->validated();
 
         $umkm = new Umkm();
-        $umkm->nib = $input['nib'];
+        $umkm->nib = isset($input['nib']) ? $input['nib'] : 0;
+        $umkm->npwp = isset($input['npwp']) ? $input['npwp'] : '';
         $umkm->nama_usaha = $input['nama_usaha'];
         $umkm->id_user = $input['user'];
         $umkm->id_lama_usaha = $input['lama_usaha'];
         $umkm->id_jenis_usaha = $input['jenis_usaha'];
         $umkm->id_modal = $input['modal'];
-        $umkm->npwp = $input['npwp'];
         $umkm->tahun_pendataan = date("Y");
         $umkm->telah_diterima = true;
         $umkm->diterima_pada = date("Y-m-d");
@@ -80,7 +80,9 @@ class UmkmController extends Controller
             'detail' => $input['detail_alamat']
         ]);
         
-        $umkm->legalitas()->attach($input['legalitas']);
+        if (isset($input['legalitas'])) {
+            $umkm->legalitas()->attach($input['legalitas']);
+        }
 
         return redirect('backoffice/umkm')->with('success_message', 'Berhasil menambahkan UMKM baru');
     }
