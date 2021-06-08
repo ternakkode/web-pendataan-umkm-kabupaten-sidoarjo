@@ -81,7 +81,7 @@ class DashboardController extends Controller
         $input = $request->validated();
 
         $umkm = Umkm::find($input['id_umkm']);
-        $umkm->nib = isset($input['nib']) ? $input['nib'] : '';
+        $umkm->nib = isset($input['nib']) ? $input['nib'] : 0;
         $umkm->npwp = isset($input['npwp']) ? $input['npwp'] : '';
         $umkm->nama_usaha = $input['nama_usaha'];
         $umkm->id_lama_usaha = $input['lama_usaha'];
